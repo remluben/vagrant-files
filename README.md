@@ -2,9 +2,10 @@
 
 A collection of vagrant files and install scripts for setting up different development environments for VMs
 
-## Boilerplate
+## Boilerplates
 
-- [`LAMP stack`](./boilerplates/lamp)
+- [`LAMP`](./boilerplates/lamp)
+- [`Laravel LAMP`](./boilerplates/lamp-laravel)
 
 ## Thanks to
 
