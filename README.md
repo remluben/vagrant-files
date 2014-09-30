@@ -5,7 +5,17 @@ A collection of vagrant files and install scripts for setting up different devel
 ## Boilerplates
 
 - [`LAMP`](./boilerplates/lamp)
+ - Apache 2
+ - PHP 5.5
+ - MYSQL 
+ - phpmyadmin
 - [`Laravel LAMP`](./boilerplates/lamp-laravel)
+ - Apache 2
+ - PHP 5.5
+ - MYSQL
+ - phpmyadmin
+ - composer
+ - Laravel 4 framework project
 
 ## Requirements
 
@@ -25,3 +35,4 @@ As this repository contains vagrant setup boilerplate files, you need to have Va
 - [https://gist.github.com/fideloper/7074502](https://gist.github.com/fideloper/7074502)
 - [Setting Up Vagrant With Laravel 4](http://culttt.com/2013/06/17/setting-up-vagrant-with-laravel-4/)
 - [How to Install the Latest Version of PHP 5.5 on Ubuntu](http://www.dev-metal.com/how-to-setup-latest-version-of-php-5-5-on-ubuntu-12-04-lts/)
+- [https://gist.github.com/rrosiek/8190550](https://gist.github.com/rrosiek/8190550)
