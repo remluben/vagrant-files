@@ -84,15 +84,15 @@ echo "--- Setup database $DBNAME ---"
 echo "CREATE DATABASE $DBNAME;" | mysql -u root -p$DBPASSWD
 
 echo "--- We need laravel installed for out laravel project. Don't we? ---"
-composer create-project laravel/laravel /vagrant/laravel --prefer-dist
+composer create-project laravel/laravel /vagrant/laravel dev-develop --prefer-dist
 mv /vagrant/laravel/* /vagrant
 rm -r /vagrant/laravel
 
 echo "--- Activate laravel debug mode. ---"
-sed -i "s/'debug' => false,*/'debug' => true,/" /vagrant/app/config/app.php
+sed -i "s/'debug' => false,*/'debug' => true,/" /vagrant/config/app.php
 echo "--- Set laravel database credentials. ---"
-sed -i "s/'database'  => .*/'database'  => '$DBNAME',/" /vagrant/app/config/database.php
-sed -i "s/'username'  => .*/'username'  => 'root',/" /vagrant/app/config/database.php
-sed -i "s/'password'  => .*/'password'  => '$DBPASSWD',/" /vagrant/app/config/database.php
+sed -i "s/'database'  => .*/'database'  => '$DBNAME',/" /vagrant/config/database.php
+sed -i "s/'username'  => .*/'username'  => 'root',/" /vagrant/config/database.php
+sed -i "s/'password'  => .*/'password'  => '$DBPASSWD',/" /vagrant/config/database.php
 
 echo "--- All set to go! Would you like to play a game? ---"

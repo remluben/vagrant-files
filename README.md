@@ -7,7 +7,7 @@ A collection of vagrant files and install scripts for setting up different devel
 - [`LAMP`](./boilerplates/lamp)
  - Apache 2
  - PHP 5.5
- - MYSQL 
+ - MYSQL
  - phpmyadmin
 - [`Laravel LAMP`](./boilerplates/lamp-laravel)
  - Apache 2
@@ -15,7 +15,7 @@ A collection of vagrant files and install scripts for setting up different devel
  - MYSQL
  - phpmyadmin
  - composer
- - Laravel 4.2 framework project
+ - Laravel 5 framework project
 
 ## Requirements
 
