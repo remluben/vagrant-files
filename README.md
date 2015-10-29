@@ -34,13 +34,15 @@ These boilerplates are tested and working on Ubuntu 14.04.
 3. Within your `/some/path/project/` directory execute `vagrant up`
 4. Let vagrant do all the work
 5. Start programming or login to the brand new VM using `vagrant ssh`
-6. Access the webserver root directory using http://localhost:8080
-7. Access the phpmyadmin database administration tool using http://localhost:8081
+6. Access the webserver root directory using [http://localhost:8080](http://localhost:8080)
+7. Access the phpmyadmin database administration tool using [http://localhost:8081](http://localhost:8081)
 
 ### Default database credentials
 
 User:     root
+
 Password: root
+
 Database: development
 
 You can easily change the database *root* user password and database name by editing *install.sh*.
