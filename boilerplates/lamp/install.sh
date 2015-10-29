@@ -10,20 +10,16 @@ echo "--- Good morning, master. Let's get to work. Installing now. ---"
 echo "--- Updating packages list ---"
 sudo apt-get update
 
-echo "--- MySQL time ---"
-sudo debconf-set-selections <<< "mysql-server mysql-server/root_password password $DBPASSWD"
-sudo debconf-set-selections <<< "mysql-server mysql-server/root_password_again password $DBPASSWD"
-
 echo "--- Installing base packages ---"
 sudo apt-get install -y vim curl python-software-properties
 
 echo "--- We want the bleeding edge of PHP, right master? ---"
-sudo add-apt-repository -y ppa:ondrej/php5
+sudo add-apt-repository ppa:ondrej/php5-5.6
 
 echo "--- Updating packages list ---"
 sudo apt-get update
 
-echo "\n--- Installing MySQL specific packages and settings ---\n"
+echo "--- MySQL time ---"
 sudo debconf-set-selections <<< "mysql-server mysql-server/root_password password $DBPASSWD"
 sudo debconf-set-selections <<< "mysql-server mysql-server/root_password_again password $DBPASSWD"
 

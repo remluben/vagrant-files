@@ -14,7 +14,7 @@ echo "--- Installing base packages ---"
 sudo apt-get install -y vim curl python-software-properties
 
 echo "--- We want the bleeding edge of PHP, right master? ---"
-sudo add-apt-repository -y ppa:ondrej/php5
+sudo add-apt-repository ppa:ondrej/php5-5.6
 
 echo "--- Updating packages list ---"
 sudo apt-get update
@@ -84,15 +84,18 @@ echo "--- Setup database $DBNAME ---"
 echo "CREATE DATABASE $DBNAME;" | mysql -u root -p$DBPASSWD
 
 echo "--- We need laravel installed for out laravel project. Don't we? ---"
-composer create-project laravel/laravel /vagrant/laravel dev-develop --prefer-dist
-mv /vagrant/laravel/* /vagrant
-rm -r /vagrant/laravel
+composer create-project laravel/laravel /vagrant/laravel --prefer-dist
+cd /vagrant/laravel
+mv * .[^.]* ..
+cd ..
+rm -r laravel
+sudo chmod -R 777 /vagrant/storage/
 
-echo "--- Activate laravel debug mode. ---"
-sed -i "s/'debug' => false,*/'debug' => true,/" /vagrant/config/app.php
-echo "--- Set laravel database credentials. ---"
-sed -i "s/'database'  => .*/'database'  => '$DBNAME',/" /vagrant/config/database.php
-sed -i "s/'username'  => .*/'username'  => 'root',/" /vagrant/config/database.php
-sed -i "s/'password'  => .*/'password'  => '$DBPASSWD',/" /vagrant/config/database.php
+echo "--- Start setting up environment specific configuration values for our laravel application. ---"
+echo "--- Frist, set laravel database credentials. ---"
+
+sed -i "s/DB_DATABASE=homestead/DB_DATABASE=$DBNAME/" /vagrant/.env
+sed -i "s/DB_USERNAME=homestead/DB_USERNAME=root/" /vagrant/.env
+sed -i "s/DB_PASSWORD=secret/DB_PASSWORD=$DBPASSWD/" /vagrant/.env
 
 echo "--- All set to go! Would you like to play a game? ---"
