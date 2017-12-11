@@ -1,23 +1,23 @@
 # vagrant-files
 
-A collection of vagrant files and install scripts for setting up different development environments for Ubuntu VMs
+A collection of vagrant files and install scripts for setting up different development environments for Ubuntu VMs on 32-bit machines
 
 ## Boilerplates
 
 - [`LAMP`](./boilerplates/lamp)
  - Ubuntu 14.04 LTS (32-bit)
  - Apache 2
- - PHP 5.5
+ - PHP 7.1
  - MYSQL
- - phpmyadmin
-- [`Laravel 5.1 LAMP`](./boilerplates/lamp-laravel)
+ - MYSQL adminer
+- [`Laravel 5.5 LAMP`](./boilerplates/lamp-laravel)
  - Ubuntu 14.04 LTS (32-bit)
  - Apache 2
- - PHP 5.5
+ - PHP 7.1
  - MYSQL
- - phpmyadmin
+ - MYSQL adminer
  - composer
- - Laravel 5.1 framework project
+ - Laravel 5.5 framework project
 
 ## Requirements
 
@@ -35,17 +35,15 @@ These boilerplates are tested and working on Ubuntu 14.04.
 4. Let vagrant do all the work
 5. Start programming or login to the brand new VM using `vagrant ssh`
 6. Access the webserver root directory using [http://localhost:8080](http://localhost:8080)
-7. Access the phpmyadmin database administration tool using [http://localhost:8081](http://localhost:8081)
+7. Access the MYQL adminer database administration tool using [http://localhost:8181](http://localhost:8181) using user *root* and no password
 
 ### Default database credentials
 
 User:     root
 
-Password: root
+Password:
 
 Database: development
-
-You can easily change the database *root* user password and database name by editing *install.sh*.
 
 ## Thanks to
 
