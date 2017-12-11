@@ -35,13 +35,13 @@ These boilerplates are tested and working on Ubuntu 14.04.
 4. Let vagrant do all the work
 5. Start programming or login to the brand new VM using `vagrant ssh`
 6. Access the webserver root directory using [http://localhost:8080](http://localhost:8080)
-7. Access the MYQL adminer database administration tool using [http://localhost:8181](http://localhost:8181) using user *root* and no password
+7. Access the MYQL adminer database administration tool using [http://localhost:8081](http://localhost:8081) using user *root* and no password
 
 ### Default database credentials
 
 User:     root
 
-Password:
+Password: root
 
 Database: development
 

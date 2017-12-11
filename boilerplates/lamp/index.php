@@ -19,14 +19,14 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 text-center">
 
                     <div class="alert alert-info" role="alert">
                         Congratulations! Your vagrant VM is up and running with 
                         <ul>
-                            <li>the latest version of PHP 5.*</li>
+                            <li>the latest version of PHP 7.*</li>
                             <li>the Apache webserver</li>
                             <li>a MYSQL database <i>development</i> with username and password <i>root</i></li>
                         </ul>
