@@ -28,19 +28,19 @@ sudo a2enconf httpd
 sudo apt-get install python-software-properties software-properties-common
 sudo LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php
 sudo apt-get update
-sudo apt-get install libapache2-mod-fastcgi php7.1 php7.1-fpm php7.1-mysql php7.1-curl php7.1-gd php7.1-intl php-pear php7.1-imap php7.1-mcrypt php7.1-ps php7.1-pspell php7.1-recode php7.1-snmp php7.1-sqlite php7.1-tidy php7.1-xmlrpc php7.1-xsl php7.1-mbstring -y
+sudo apt-get install libapache2-mod-fastcgi php7.2 php7.2-fpm php7.2-mysql php7.2-curl php7.2-gd php7.2-intl php-pear php7.2-imap php7.2-ps php7.2-pspell php7.2-recode php7.2-snmp php7.2-sqlite php7.2-tidy php7.2-xmlrpc php7.2-xsl php7.2-mbstring -y
 
 sudo a2enmod actions fastcgi alias
 
 sudo service apache2 restart
-sudo service php7.1-fpm restart
+sudo service php7.2-fpm restart
 
 # PHP tweaks
 echo "--- Let us configure good PHP defaults, my master. ---"
-sed -i "s/error_reporting = .*/error_reporting = E_ALL/" /etc/php/7.1/fpm/php.ini
-sed -i "s/display_errors = .*/display_errors = On/" /etc/php/7.1/fpm/php.ini
-sed -i "s/upload_max_filesize = 2M/upload_max_filesize = 20M/g" /etc/php/7.1/fpm/php.ini
-sed -i "s/post_max_size = 8M/post_max_size = 80M/g" /etc/php/7.1/fpm/php.ini
+sed -i "s/error_reporting = .*/error_reporting = E_ALL/" /etc/php/7.2/fpm/php.ini
+sed -i "s/display_errors = .*/display_errors = On/" /etc/php/7.2/fpm/php.ini
+sed -i "s/upload_max_filesize = 2M/upload_max_filesize = 20M/g" /etc/php/7.2/fpm/php.ini
+sed -i "s/post_max_size = 8M/post_max_size = 80M/g" /etc/php/7.2/fpm/php.ini
 
 # Silent MySQL Install
 # http://stackoverflow.com/questions/7739645/install-mysql-on-ubuntu-without-password-prompt
@@ -73,7 +73,7 @@ VHOST=$(cat <<EOF
     AddHandler php7-fcgi .php
     Action php7-fcgi /php7-fcgi
     Alias /php7-fcgi /usr/lib/cgi-bin/php7-fcgi
-    FastCgiExternalServer /usr/lib/cgi-bin/php7-fcgi -socket /var/run/php/php7.1-fpm.sock -pass-header Authorization
+    FastCgiExternalServer /usr/lib/cgi-bin/php7-fcgi -socket /var/run/php/php7.2-fpm.sock -pass-header Authorization
 </IfModule>
 
 <VirtualHost *:80>
@@ -115,6 +115,7 @@ sudo apt-get install -y git
 sudo apt-get -y autoremove
 
 # Install Composer
+
 echo "--- Composer is the future. But you knew that, did you master? Nice job. ---"
 curl -sS https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
