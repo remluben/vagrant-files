@@ -7,17 +7,17 @@ A collection of vagrant files and install scripts for setting up different devel
 - [`LAMP`](./boilerplates/lamp)
  - Ubuntu 14.04 LTS (32-bit)
  - Apache 2
- - PHP 7.1
+ - PHP 7.2
  - MYSQL
  - MYSQL adminer
 - [`Laravel 5.5 LAMP`](./boilerplates/lamp-laravel)
  - Ubuntu 14.04 LTS (32-bit)
  - Apache 2
- - PHP 7.1
+ - PHP 7.2
  - MYSQL
  - MYSQL adminer
  - composer
- - Laravel 5.5 framework project
+ - Laravel 5.6 framework project
 
 ## Requirements
 
